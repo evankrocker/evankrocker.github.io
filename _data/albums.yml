@@ -1,0 +1,11 @@
+- artist: "The Beatles"
+  title: "Abbey Road"
+  genre: "Rock"
+  year: 1969
+  artwork: "/assets/images/abbey_road.jpg"
+
+- artist: "Pink Floyd"
+  title: "The Dark Side of the Moon"
+  genre: "Progressive Rock"
+  year: 1973
+  artwork: "/assets/images/dark_side_of_the_moon.jpg"
