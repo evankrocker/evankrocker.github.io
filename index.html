@@ -25,22 +25,3 @@ title: Vinyl Collection
   {% endfor %}
 </ul>
 
-<script>
-function sortAlbums() {
-  const sortBy = document.getElementById('sort').value;
-  const list = document.getElementById('album-list');
-  const items = Array.from(list.getElementsByTagName('li'));
-
-  items.sort((a, b) => {
-    const aValue = a.querySelector(`p:contains(${sortBy.charAt(0).toUpperCase() + sortBy.slice(1)})`).textContent.split(': ')[1];
-    const bValue = b.querySelector(`p:contains(${sortBy.charAt(0).toUpperCase() + sortBy.slice(1)})`).textContent.split(': ')[1];
-
-    if (sortBy === 'year') {
-      return parseInt(aValue) - parseInt(bValue);
-    }
-    return aValue.localeCompare(bValue);
-  });
-
-  items.forEach(item => list.appendChild(item));
-}
-</script>
