@@ -8,19 +8,20 @@ title: Vinyl Collection
 
 <div class="row row-cols-3 g-3">
   {% for album in site.data.albums %}
-  <div class="col">
+ <div class="col">
     
-<div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
   <img src="{{ album.artwork }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{ album.artist }} - {{ album.title }}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-  {% endfor %}
+  
 </div>
     
   </div>
+  {% endfor %}
 </div>
 
 
