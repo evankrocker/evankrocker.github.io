@@ -5,9 +5,10 @@ title: Vinyl Collection
 
 <h2>Vinyl Collection</h2>
 
-{% for album in site.data.albums %}
+
 <div class="row row-cols-3 g-3">
   <div class="col">
+    {% for album in site.data.albums %}
 <div class="card" style="width: 18rem;">
   <img src="{{ album.artwork }}" class="card-img-top" alt="...">
   <div class="card-body">
@@ -16,9 +17,10 @@ title: Vinyl Collection
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+    {% endfor %}
   </div>
 </div>
-{% endfor %}
+
 
 
 
