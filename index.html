@@ -6,8 +6,8 @@ title: Vinyl Collection
 <h2>Vinyl Collection</h2>
 
 {% for album in site.data.albums %}
-<div class="row">
-  <div class="col-sm-6">
+<div class="row row-cols-3 g-3">
+  <div class="col">
 <div class="card" style="width: 18rem;">
   <img src="{{ album.artwork }}" class="card-img-top" alt="...">
   <div class="card-body">
