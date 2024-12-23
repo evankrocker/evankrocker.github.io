@@ -5,23 +5,16 @@ title: Vinyl Collection
 
 <h2>Vinyl Collection</h2>
 
-<div>
-  <label for="sort">Sort by:</label>
-  <select id="sort" onchange="sortAlbums()">
-    <option value="artist">Artist</option>
-    <option value="genre">Genre</option>
-    <option value="year">Year Released</option>
-  </select>
+{% for album in site.data.albums %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ album.artwork }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ album.artist }} - {{ album.title }}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
+{% endfor %}
 
-<ul id="album-list">
-  {% for album in site.data.albums %}
-  <li>
-    <img src="{{ album.artwork }}" alt="{{ album.title }} artwork" width="100">
-    <p><strong>{{ album.artist }} - {{ album.title }}</strong></p>
-    <p>Genre: {{ album.genre }}</p>
-    <p>Year: {{ album.year }}</p>
-  </li>
-  {% endfor %}
-</ul>
+
 
