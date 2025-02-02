@@ -2,6 +2,7 @@
 layout: artist
 name: The Beatles
 bio: The most influential rock band of all time.
+---
 albums:
   - title: Abbey Road
     year: 1969
