@@ -1,31 +1,27 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  {% if page.image %}
-  <img src="{{ page.image }}" alt="{{ page.title }} cover" />
-  {% endif %}
-
-  {{ content }}
-
-  <h2>Albums</h2>
-  <ul>
-    {% assign artist_name = page.title %}
-    {% assign albums_by_artist = %}
-    {% for album in site.albums %}
-      {% if album.artist == artist_name %}  {% assign albums_by_artist = albums_by_artist | push: album %}
-      {% endif %}
-    {% endfor %}
-
-    {% if albums_by_artist.size > 0 %}
-      {% for album in albums_by_artist %}
-        <li><a href="{{ album.url }}">{{ album.title }}</a></li>
-      {% endfor %}
-    {% else %}
-      <p>No albums found for this artist.</p>
+<div class="artist-page">
+    <h1>{{ page.name }}</h1>
+    {% if page.bio %}
+    <div class="artist-bio">
+        {{ page.bio }}
+    </div>
     {% endif %}
-  </ul>
-</article>
+    
+    <h2>Albums</h2>
+    <div class="albums-grid">
+        {% for album in page.albums %}
+        <div class="album-card">
+            {% if album.cover %}
+            <img src="{{ album.cover }}" alt="{{ album.title }} cover">
+            {% endif %}
+            <h3>{{ album.title }}</h3>
+            <p class="year">{{ album.year }}</p>
+            {% if album.notes %}
+            <p class="notes">{{ album.notes }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
