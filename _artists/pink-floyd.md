@@ -11,3 +11,4 @@ albums:
     year: 1979
     cover: /assets/covers/the-wall.jpg
     notes: 2016 remaster
+---
