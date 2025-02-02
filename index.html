@@ -1,22 +1,12 @@
 ---
 layout: default
-title: Welcome to My Vinyl Collection
+title: Home
 ---
-
-<h1>My Vinyl Collection</h1>
-
-<p>Welcome to my online vinyl record collection!</p>
-
-<h2>Artists</h2>
-<ul>
-  {% for artist in site.artists %}
-    <li><a href="{{ artist.url }}">{{ artist.title }}</a></li>
-  {% endfor %}
-</ul>
-
-<h2>Recently Added Albums</h2>
-<ul>
-  {% for album in site.albums limit:5 %}
-    <li><a href="{{ album.url }}">{{ album.title }}</a> by {{ album.artist }}</li>
-  {% endfor %}
-</ul>
+<div class="artists-grid">
+    {% for artist in site.artists %}
+    <div class="artist-card">
+        <h2><a href="{{ artist.url | relative_url }}">{{ artist.name }}</a></h2>
+        <p>{{ artist.albums.size }} albums in collection</p>
+    </div>
+    {% endfor %}
+</div>
