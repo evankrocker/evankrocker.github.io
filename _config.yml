@@ -1,44 +1,8 @@
 title: My Vinyl Collection
-description: A showcase of my cherished vinyl records.
-author: Your Name
-email: your.email@example.com
-baseurl: "" # Important: Leave this empty for username.github.io or /your-repo-name if needed
-url: "https://evankrocker.github.io" # Replace with your GitHub Pages URL (or your custom domain)
-permalink: /:title/ # Use a descriptive permalink structure
-
-# Build settings
-markdown: kramdown
-theme: minima # Or choose another theme
-plugins:
-  - jekyll-feed
-
-# Collections for Artists and Albums
+description: A catalog of my vinyl record collection
+baseurl: "http://evankrocker.github.io/"
+url: ""
 collections:
   artists:
     output: true
     permalink: /artists/:path/
-  albums:
-    output: true
-    permalink: /albums/:path/
-
-# Default front matter for artists
-defaults:
-  - scope:
-      type: artists
-    values:
-      layout: artist
-
-# Default front matter for albums
-defaults:
-  - scope:
-      type: albums
-    values:
-      layout: album
-
-# Exclude these files from your site's output
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - .sass-cache/
