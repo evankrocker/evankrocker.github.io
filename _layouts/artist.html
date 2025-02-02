@@ -14,8 +14,11 @@ layout: default
   <h2>Albums</h2>
   <ul>
     {% assign albums_by_artist = site.albums | where: "artist", page.title %}
-    {% for album in albums_by_artist %}
-      <li><a href="{{ album.url }}">{{ album.title }}</a></li>
-    {% endfor %}
+    {% if albums_by_artist.size > 0 %}  {% for album in albums_by_artist %}
+        <li><a href="{{ album.url }}">{{ album.title }}</a></li>
+      {% endfor %}
+    {% else %}
+      <p>No albums found for this artist.</p>
+    {% endif %}
   </ul>
 </article>
