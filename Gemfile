@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
 gem "jekyll-github-pages"
-gem "minima" # Or your theme
+gem "minima" # Or any theme you prefer
