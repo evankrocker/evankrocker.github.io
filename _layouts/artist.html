@@ -14,7 +14,8 @@ layout: default
   <h2>Albums</h2>
   <ul>
     {% assign artist_name = page.title %}
-    {% assign albums_by_artist = [] %}  {% for album in site.albums %}
+    {% assign albums_by_artist = [] %}
+    {% for album in site.albums %}
       {% if album.artist contains artist_name %}
         {% assign albums_by_artist = albums_by_artist | push: album %}
       {% endif %}
