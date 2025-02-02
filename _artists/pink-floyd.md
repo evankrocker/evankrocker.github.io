@@ -1,6 +1,6 @@
 ---
 title: Pink Floyd
-image: /images/pinkfloyd.jpg # Optional artist image
+image: /images/pinkfloyd.jpg # Add your image
 ---
 
-Pink Floyd were an English rock band formed in London in 1965. ... (Artist biography)
+Pink Floyd biography...
