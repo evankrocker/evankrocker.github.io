@@ -13,7 +13,7 @@ layout: default
 
   <h2>Albums</h2>
   <ul>
-    {% assign albums_by_artist = site.albums | where_exp: "album", "album.artist == page.title" %}
+    {% assign artist_name = page.title %}  {% assign albums_by_artist = site.albums | where_exp: "album", "album.artist contains artist_name" %}
     {% if albums_by_artist.size > 0 %}
       {% for album in albums_by_artist %}
         <li><a href="{{ album.url }}">{{ album.title }}</a></li>
