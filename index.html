@@ -1,18 +1,21 @@
 ---
 layout: default
+title: Welcome to My Vinyl Collection
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+<h1>My Vinyl Collection</h1>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<p>Welcome to my online vinyl record collection!  Here you'll find details about the artists and albums I own.</p>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+<h2>Artists</h2>
+<ul>
+  {% for artist in site.artists %}
+    <li><a href="{{ artist.url }}">{{ artist.title }}</a></li>
   {% endfor %}
-</div>
+</ul>
+
+<h2>Recently Added Albums (Example - you'd likely want to sort by date)</h2>
+<ul>
+  {% for album in site.albums limit:5 %} <li><a href="{{ album.url }}">{{ album.title }}</a> by {{ album.artist }}</li>
+  {% endfor %}
+</ul>
