@@ -5,7 +5,7 @@ title: Welcome to My Vinyl Collection
 
 <h1>My Vinyl Collection</h1>
 
-<p>Welcome to my online vinyl record collection!  Here you'll find details about the artists and albums I own.</p>
+<p>Welcome to my online vinyl record collection! Here you'll find details about the artists and albums I own.</p>
 
 <h2>Artists</h2>
 <ul>
@@ -16,6 +16,7 @@ title: Welcome to My Vinyl Collection
 
 <h2>Recently Added Albums (Example - you'd likely want to sort by date)</h2>
 <ul>
-  {% for album in site.albums limit:5 %} <li><a href="{{ album.url }}">{{ album.title }}</a> by {{ album.artist }}</li>
+  {% for album in site.albums limit:5 %}
+    <li><a href="{{ album.url }}">{{ album.title }}</a> by {{ album.artist }}</li>
   {% endfor %}
 </ul>
