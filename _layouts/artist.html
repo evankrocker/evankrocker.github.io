@@ -4,18 +4,24 @@ layout: default
 <div class="artist-page">
     <h1>{{ page.name }}</h1>
 
-    {% for album in page.albums %}
-<div class="card" style="width: 18rem;">
-  <img src="{{ album.cover }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">
-         <h3>{{ album.title }}</h3>
-            <p class="year">{{ album.year }}</p>
-    </p>
-  </div>
-</div>
-    {% endfor %}
-    
 
-    </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+{% for album in page.albums %}
+  <tbody>
+    <tr>
+      <th scope="row"><img src="{{ album.cover }}" class="card-img-top" alt="..."></th>
+      <td>{{ album.title }}</td>
+      <td>{{ album.year }}</td>
+      <td>@mdo</td>
+    </tr>
+ {% endfor %}
+  </tbody>
+</table>
