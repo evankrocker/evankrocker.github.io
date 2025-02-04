@@ -17,7 +17,7 @@ layout: default
 {% for album in page.albums %}
   <tbody>
     <tr>
-      <th scope="row"><img src="{{ album.cover }}" class="card-img-top" alt="..."></th>
+      <th><img src="{{ album.cover }}" style="width: 100px;height:100px;" class="card-img-top" alt="..."></th>
       <td>{{ album.title }}</td>
       <td>{{ album.year }}</td>
       <td>@mdo</td>
