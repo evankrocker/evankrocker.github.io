@@ -3,25 +3,19 @@ layout: default
 ---
 <div class="artist-page">
     <h1>{{ page.name }}</h1>
-    {% if page.bio %}
-    <div class="artist-bio">
-        {{ page.bio }}
-    </div>
-    {% endif %}
-    
-    <h2>Albums</h2>
-    <div class="albums-grid">
-        {% for album in page.albums %}
-        <div class="album-card">
-            {% if album.cover %}
-            <img src="{{ album.cover }}" alt="{{ album.title }} cover">
-            {% endif %}
-            <h3>{{ album.title }}</h3>
+
+    {% for album in page.albums %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ album.cover }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">
+         <h3>{{ album.title }}</h3>
             <p class="year">{{ album.year }}</p>
-            {% if album.notes %}
-            <p class="notes">{{ album.notes }}</p>
-            {% endif %}
-        </div>
-        {% endfor %}
+    </p>
+  </div>
+</div>
+    {% endfor %}
+    
+
     </div>
 </div>
