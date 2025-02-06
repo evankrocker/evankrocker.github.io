@@ -8,10 +8,9 @@ layout: default
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Cover</th>
+      <th scope="col">Title</th>
+      <th scope="col">Year Released</th>
     </tr>
   </thead>
 {% for album in page.albums %}
@@ -20,7 +19,6 @@ layout: default
       <th><img src="{{ album.cover }}" style="width: 100px;height:100px;" class="card-img-top" alt="..."></th>
       <td>{{ album.title }}</td>
       <td>{{ album.year }}</td>
-      <td>@mdo</td>
     </tr>
  {% endfor %}
   </tbody>
