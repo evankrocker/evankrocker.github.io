@@ -2,11 +2,22 @@
 layout: default
 title: Home
 ---
-<div class="artists-grid">
-    {% for artist in site.artists %}
-    <div class="artist-card">
-        <h2><a href="{{ artist.url | relative_url }}">{{ artist.name }}</a></h2>
-        <p>{{ artist.albums.size }} albums in collection</p>
-    </div>
-    {% endfor %}
-</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Artist</th>
+      <th scope="col">Collection Count</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for artist in site.artists %}
+    <tr>
+      <td><a href="{{ artist.url | relative_url }}">{{ artist.name }}</a></td>
+      <td>{{ artist.albums.size }}</td>
+      <td>@mdo</td>
+    </tr>
+      {% endfor %}
+ 
+  </tbody>
+</table>
