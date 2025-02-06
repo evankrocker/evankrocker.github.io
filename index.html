@@ -14,7 +14,7 @@ title: Home
       {% for artist in site.artists %}
     <tr>
       <td><a href="{{ artist.url | relative_url }}">{{ artist.name }}</a></td>
-      <td>{{ artist.albums.size }}</td>
+      <td><button type="button" class="btn btn-info">{{ artist.albums.size }}</button></td>
     </tr>
       {% endfor %}
  
