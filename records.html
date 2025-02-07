@@ -1,0 +1,33 @@
+---
+layout: default
+title: Home
+---
+<br>
+
+<h4>
+  <center>
+    Vinyl Record Collection
+  </center>
+
+  
+</h4>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Artist</th>
+      <th scope="col">Collection Count</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for artist in site.artists %}
+    <tr>
+      <td><a href="{{ artist.url | relative_url }}">{{ artist.name }}</a></td>
+      <td><button type="button" class="btn btn-info">{{ artist.albums.size }}</button></td>
+    </tr>
+      {% endfor %}
+ 
+  </tbody>
+</table>
