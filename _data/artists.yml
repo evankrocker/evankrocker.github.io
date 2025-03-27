@@ -1,0 +1,18 @@
+- name: The Beatles
+  url: /artists/the-beatles
+  albums:
+    - title: Abbey Road
+      year: 1969
+      artwork: /assets/images/abbey-road.jpg
+    - title: Sgt. Pepper's Lonely Hearts Club Band
+      year: 1967
+      artwork: /assets/images/sgt-pepper.jpg
+- name: Pink Floyd
+  url: /artists/pink-floyd
+  albums:
+    - title: The Dark Side of the Moon
+      year: 1973
+      artwork: /assets/images/dark-side.jpg
+    - title: The Wall
+      year: 1979
+      artwork: /assets/images/the-wall.jpg
