@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+<input type="text" id="search-input" placeholder="Search albums...">
+<ul id="album-list">
+  {% for album in page.albums %}
+    <li data-title="{{ album.title }}">
+      <img src="{{ album.artwork }}" alt="{{ album.title }} cover" width="100">
+      {{ album.title }} ({{ album.year }})
+    </li>
+  {% endfor %}
+</ul>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('search-input');
+    var albumList = document.getElementById('album-list');
+    var albums = albumList.getElementsByTagName('li');
+
+    searchInput.addEventListener('keyup', function() {
+      var filter = searchInput.value.toLowerCase();
+      for (var i = 0; i < albums.length; i++) {
+        var albumTitle = albums[i].getAttribute('data-title').toLowerCase();
+        if (albumTitle.includes(filter)) {
+          albums[i].style.display = '';
+        } else {
+          albums[i].style.display = 'none';
+        }
+      }
+    });
+  });
+</script>
