@@ -1,18 +1,31 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+<h2>Artists</h2>
+<input type="text" id="search-artist-input" placeholder="Search artists...">
+<ul id="artist-list">
+  {% for artist in site.data.artists %}
+    <li data-name="{{ artist.name }}"><a href="{{ artist.url }}">{{ artist.name }}</a></li>
   {% endfor %}
-</div>
+</ul>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchArtistInput = document.getElementById('search-artist-input');
+    var artistList = document.getElementById('artist-list');
+    var artists = artistList.getElementsByTagName('li');
+
+    searchArtistInput.addEventListener('keyup', function() {
+      var filter = searchArtistInput.value.toLowerCase();
+      for (var i = 0; i < artists.length; i++) {
+        var artistName = artists[i].getAttribute('data-name').toLowerCase();
+        if (artistName.includes(filter)) {
+          artists[i].style.display = '';
+        } else {
+          artists[i].style.display = 'none';
+        }
+      }
+    });
+  });
+</script>
