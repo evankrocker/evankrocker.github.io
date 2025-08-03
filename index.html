@@ -1,0 +1,20 @@
+---
+layout: default
+title: Vinyl Collection
+---
+<div class="row" id="albumList">
+  {% assign sorted = site.albums | sort: 'title' %}
+  {% for album in sorted %}
+  <div class="col-md-4 col-sm-6 album-card" data-title="{{ album.title | downcase }}" data-genre="{{ album.genre | downcase }}">
+    <div class="card mb-4">
+      <img src="{{ album.cover }}" class="card-img-top" alt="{{ album.title }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ album.title }}</h5>
+        <p class="card-text">{{ album.artist }} ({{ album.year }})</p>
+        <p><span class="badge bg-primary">{{ album.genre }}</span></p>
+        <a href="{{ album.url }}" class="btn btn-outline-dark">Details</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

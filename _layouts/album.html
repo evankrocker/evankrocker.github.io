@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="card mb-3">
+  <img src="{{ page.cover }}" class="card-img-top" alt="{{ page.title }}">
+  <div class="card-body">
+    <h3 class="card-title">{{ page.title }}</h3>
+    <p class="card-text"><strong>Artist:</strong> {{ page.artist }}</p>
+    <p class="card-text"><strong>Year:</strong> {{ page.year }}</p>
+    <p class="card-text"><strong>Genre:</strong> {{ page.genre }}</p>
+    <p class="card-text"><strong>Tracks:</strong></p>
+    <ul>
+      {% for track in page.tracks %}
+      <li>{{ track }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

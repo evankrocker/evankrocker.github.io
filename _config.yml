@@ -1,0 +1,8 @@
+title: My Vinyl Collection
+baseurl: "/vinyl"
+url: "https://evankrocker.github.io"
+collections:
+  albums:
+    output: true
+  artists:
+    output: true

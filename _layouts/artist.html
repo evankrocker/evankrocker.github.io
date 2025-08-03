@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+<ul>
+  {% for album in site.albums %}
+    {% if album.artist == page.title %}
+    <li><a href="{{ album.url }}">{{ album.title }}</a> ({{ album.year }})</li>
+    {% endif %}
+  {% endfor %}
+</ul>
