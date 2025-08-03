@@ -1,5 +1,5 @@
 title: My Vinyl Collection
-baseurl: "/vinyl"
+baseurl: "/"
 url: "https://evankrocker.github.io"
 collections:
   albums:
