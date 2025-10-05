@@ -1,6 +1,6 @@
 title: "Vinyl Record Collection"
 description: "Catalog of my vinyl records"
-baseurl: ""
+baseurl: "https://evankrocker.github.io/
 url: "https://evankrocker.github.io/"
 collections:
   albums:
