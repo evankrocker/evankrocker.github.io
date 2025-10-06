@@ -2,21 +2,4 @@
 layout: default
 title: Home
 ---
-<h1>Vinyl Record Collection</h1>
-<p>Total albums in collection: {{ site.albums | size }}</p>
-<div class="row">
-  {% assign sorted_albums = site.albums | sort: "title" %}
-  {% for album in sorted_albums %}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="{{ album.artwork }}" class="card-img-top" alt="{{ album.title }} artwork">
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="{{ album.url | relative_url }}">{{ album.title }}</a>
-          </h5>
-          <p class="card-text">{{ album.artist }}</p>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+soon
