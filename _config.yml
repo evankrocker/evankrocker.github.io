@@ -1,0 +1,8 @@
+title: "Evan's Vinyl Collection"
+description: "A showcase of my favorite vinyl records."
+baseurl: ""
+url: "https://evankrocker.github.io"
+theme: minima
+collections:
+  records:
+    output: true
