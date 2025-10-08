@@ -6,8 +6,30 @@ title: Evan's Vinyl Collection
 <!-- Bootstrap CSS for GitHub Pages compatibility -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="container mt-4">
-  <h1 class="mb-3">Evan's Vinyl Collection</h1>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body>
   <p class="lead">Total records: <strong>{{ site.records | size }}</strong></p>
   <div class="table-responsive">
     <table class="table align-middle table-bordered table-hover">
@@ -40,4 +62,5 @@ title: Evan's Vinyl Collection
       </tbody>
     </table>
   </div>
+</body>
 </div>
