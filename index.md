@@ -3,34 +3,41 @@ layout: home
 title: Evan's Vinyl Collection
 ---
 
-<style>
-  .record-list { padding: 0; list-style: none; }
-  .record-list li { margin-bottom: 1.2em; }
-  .record-cover {
-    max-width: 100px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 1em;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  @media (max-width: 600px) {
-    .record-cover { max-width: 60px; }
-  }
-</style>
+<!-- Bootstrap CSS for GitHub Pages compatibility -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-# Evan's Vinyl Collection
-
-**Total records:** {{ site.records | size }}
-
-<ul class="record-list">
-{% assign sorted = site.records | sort: 'year' | reverse %}
-  {% for record in sorted %}
-    <li>
-      <a href="{{ record.url }}">
-        <img src="{{ record.cover }}" alt="{{ record.title }} cover" class="record-cover" />
-        <strong>{{ record.title }}</strong> by {{ record.artist }} ({{ record.year }})
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="container mt-4">
+  <h1 class="mb-3">Evan's Vinyl Collection</h1>
+  <p class="lead">Total records: <strong>{{ site.records | size }}</strong></p>
+  <div class="table-responsive">
+    <table class="table align-middle table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Album Artwork</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Album Title</th>
+          <th scope="col">Year Released</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign sorted = site.records | sort: 'year' | reverse %}
+        {% for record in sorted %}
+        <tr>
+          <td style="width:110px;">
+            <a href="{{ record.url }}">
+              <img src="{{ record.cover }}" alt="{{ record.title }} cover" class="img-fluid rounded shadow-sm" style="max-width:100px;">
+            </a>
+          </td>
+          <td>{{ record.artist }}</td>
+          <td>
+            <a href="{{ record.url }}">
+              {{ record.title }}
+            </a>
+          </td>
+          <td>{{ record.year }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
