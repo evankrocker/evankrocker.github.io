@@ -1,0 +1,29 @@
+# Jekyll Configuration for Vinyl Collection Site
+title: My Vinyl Collection
+description: A catalog of my vinyl record collection
+baseurl: "" # Leave empty if using username.github.io, or "/repository-name" if using a project repo
+url: "" # Your GitHub Pages URL (e.g., https://username.github.io)
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections
+collections:
+  records:
+    output: true
+    permalink: /records/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "records"
+    values:
+      layout: "record"
+
+# Exclude files from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

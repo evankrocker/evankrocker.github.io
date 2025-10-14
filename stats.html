@@ -1,0 +1,133 @@
+---
+layout: default
+title: Collection Statistics
+permalink: /stats/
+---
+
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-4">Collection Statistics</h1>
+        <p class="lead">Insights and breakdowns of your vinyl collection.</p>
+    </div>
+</div>
+
+<!-- Total Records Card -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card bg-primary text-white">
+            <div class="card-body text-center">
+                <h2 class="card-title display-3">{{ site.records.size }}</h2>
+                <p class="card-text">Total Records in Collection</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Albums by Artist -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3 class="card-title mb-0">Albums by Artist</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Artist</th>
+                                <th scope="col" class="text-end">Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% assign artists = site.records | map: 'artist' | uniq | sort %}
+                            {% for artist in artists %}
+                            {% assign artist_records = site.records | where: 'artist', artist %}
+                            <tr>
+                                <td>{{ artist }}</td>
+                                <td class="text-end">
+                                    <span class="badge bg-info">{{ artist_records.size }}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                {% if site.records.size == 0 %}
+                <p class="text-muted text-center">No artists in collection yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Albums by Genre -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3 class="card-title mb-0">Albums by Genre</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Genre</th>
+                                <th scope="col" class="text-end">Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% assign genres = site.records | map: 'genre' | uniq | sort %}
+                            {% for genre in genres %}
+                            {% assign genre_records = site.records | where: 'genre', genre %}
+                            <tr>
+                                <td>{{ genre }}</td>
+                                <td class="text-end">
+                                    <span class="badge bg-success">{{ genre_records.size }}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                {% if site.records.size == 0 %}
+                <p class="text-muted text-center">No genres in collection yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Stats -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Unique Artists</h5>
+                <p class="display-6 text-primary">{{ artists | size }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Genres Represented</h5>
+                <p class="display-6 text-success">{{ genres | size }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Year Span</h5>
+                {% assign years = site.records | map: 'year' | sort %}
+                {% if years.size > 0 %}
+                <p class="display-6 text-warning">{{ years.first }} - {{ years.last }}</p>
+                {% else %}
+                <p class="display-6 text-warning">N/A</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
