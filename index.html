@@ -19,7 +19,7 @@ layout: default
       {% assign sorted_records = site.records | sort: "title" %}
       {% for record in sorted_records %}
       <tr>
-        <td>{{ record.cover }}</td>
+        <td><img src="{{ record.cover }}" style="height: 150px; width: 150px;"></a></td>
         <td>{{ record.title }}</td>
         <td>{{ record.artist }}</td>
         <td>{{ record.year }}</td>
