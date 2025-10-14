@@ -1,7 +1,0 @@
-title: Vinyl Record Catalog
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://evankrocker.github.io" # replace with your GitHub Pages URL
-collections:
-  records:
-    output: true
-    permalink: /:path/
