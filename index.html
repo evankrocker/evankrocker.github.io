@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="container mt-4">
+  <h1 class="text-center">Vinyl Record Collection</h1>
+  <p class="text-center">Total Records: <strong>{{ site.records | size }}</strong></p>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Year</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign sorted_records = site.records | sort: "title" %}
+      {% for record in sorted_records %}
+      <tr>
+        <td>{{ record.cover }}</td>
+        <td>{{ record.title }}</td>
+        <td>{{ record.artist }}</td>
+        <td>{{ record.year }}</td>
+        <td>{{ record.genre }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
