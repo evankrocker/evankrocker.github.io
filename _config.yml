@@ -1,8 +1,7 @@
-title: "Evan's Vinyl Collection"
-description: "A showcase of my favorite vinyl records."
-baseurl: ""
-url: "https://evankrocker.github.io"
-theme: minima
+title: Vinyl Record Catalog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://evankrocker.github.io" # replace with your GitHub Pages URL
 collections:
   records:
     output: true
+    permalink: /:path/
