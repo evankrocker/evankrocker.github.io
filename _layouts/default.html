@@ -27,6 +27,9 @@
                         <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Collection</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if page.url contains '/artists/' or page.url == '/artists/' %}active{% endif %}" href="{{ '/artists/' | relative_url }}">Artists</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if page.url == '/stats/' %}active{% endif %}" href="{{ '/stats/' | relative_url }}">Stats</a>
                     </li>
                 </ul>

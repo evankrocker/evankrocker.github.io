@@ -1,14 +1,18 @@
 ---
 layout: default
-title: Vinyl Collection
 ---
 
-<!--<div class="row mb-4">
+<div class="row mb-4">
     <div class="col">
-        <h1 class="display-4">My Vinyl Collection</h1>
-        <p class="lead">A complete catalog of my vinyl records, sorted alphabetically by album title.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ '/artists/' | relative_url }}">Artists</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ page.artist }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-4">{{ page.artist }}</h1>
     </div>
-</div>-->
+</div>
 
 <div class="row">
     <div class="col">
@@ -18,14 +22,13 @@ title: Vinyl Collection
                     <tr>
                         <th scope="col">Cover</th>
                         <th scope="col">Album Title</th>
-                        <th scope="col">Artist</th>
                         <th scope="col">Year</th>
                         <th scope="col">Genre</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% assign sorted_records = site.records | sort: 'album_title' %}
-                    {% for record in sorted_records %}
+                    {% assign artist_records = site.records | where: 'artist', page.artist | sort: 'album_title' %}
+                    {% for record in artist_records %}
                     <tr>
                         <td>
                             {% if record.cover_image %}
@@ -37,8 +40,6 @@ title: Vinyl Collection
                             {% endif %}
                         </td>
                         <td class="align-middle"><strong>{{ record.album_title }}</strong></td>
-                        {% assign artist_slug = record.artist | slugify %}
-                        <td class="align-middle"><a href="{{ '/artists/' | append: artist_slug | append: '/' | relative_url }}">{{ record.artist }}</a></td>
                         <td class="align-middle">{{ record.year }}</td>
                         <td class="align-middle">
                             <span class="badge bg-secondary">{{ record.genre }}</span>
@@ -48,12 +49,5 @@ title: Vinyl Collection
                 </tbody>
             </table>
         </div>
-        
-        {% if site.records.size == 0 %}
-        <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">No records yet!</h4>
-            <p>Your collection is empty. Add records by creating files in the <code>_records</code> folder.</p>
-        </div>
-        {% endif %}
     </div>
 </div>
